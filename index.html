@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title>Name Greeting App by Kamal Sir </title>
+   <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        h1 {
+            background-color: #003049;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            font-size: 48px;
+        }
+
+        form {
+            background-color: #ffffffc7;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            width: 300px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 20px;
+            border: none;
+            background-color: #0077b6;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #023e8a;
+        }
+
+        #msg {
+            margin-top: 40px;
+            font-size: 40px;
+            color: #003049;
+        }
+    </style>
+
+	</head>
+	<body>
+		<h1>Name Greeting App</h1>
+		<form onsubmit="show()">
+			<input type="text" id="name" placeholder="Enter name" />
+			<br/><br/>
+			<input type="submit" />
+		</form>
+			<h2 id="msg" />
+
+	</body>
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			
+			let name=document.getElementById("name");
+			let msg=document.getElementById("msg");
+	
+
+			let d = new Date();
+			let hr=d.getHours();
+			if (hr<12)
+				msg.innerHTML="Good Morning " +name.value;
+			else if(hr<16)
+				msg.innerHTML="Good Afternoon " +name.value;
+			else
+				msg.innerHTML="Good Evening " +name.value;
+				
+		}
+	</script>
+</html>
